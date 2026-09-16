@@ -1,0 +1,169 @@
+/* MovieCard - Proporcao 2:3 & Estilo Cinematografico Stitch */
+.cinelog-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.cinelog-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--surface-container-highest);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+.cinelog-card.is-watched {
+  border-color: rgba(0, 224, 84, 0.4);
+}
+
+.card-poster-link {
+  display: block;
+  text-decoration: none;
+}
+
+.card-poster-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--surface-container-high);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.card-poster-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.cinelog-card:hover .card-poster-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Badge de Nota TMDB superior esquerdo */
+.poster-score-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: rgba(12, 14, 17, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--imdb-yellow);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Botao de Acao Rapida superior direito */
+.poster-action-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: rgba(12, 14, 17, 0.8);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease;
+  z-index: 2;
+}
+
+.poster-action-btn:hover {
+  background-color: var(--rating-green);
+  border-color: var(--rating-green);
+  transform: scale(1.1);
+}
+
+.poster-action-btn.active {
+  background-color: var(--rating-green);
+  border-color: var(--rating-green);
+}
+
+/* Pilula de Streaming inferior */
+.poster-provider-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.provider-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: rgba(17, 19, 23, 0.88);
+  backdrop-filter: blur(6px);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Area de Textos e Metadados */
+.card-details-box {
+  padding: 8px 4px 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-title-link {
+  text-decoration: none;
+}
+
+.card-movie-title {
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s ease;
+}
+
+.cinelog-card:hover .card-movie-title {
+  color: var(--primary-light);
+}
+
+.card-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+}
+
+.card-year-duration {
+  color: var(--text-secondary);
+}
+
+.card-green-stars {
+  color: var(--rating-green);
+  font-weight: 700;
+}
