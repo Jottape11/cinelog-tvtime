@@ -1,0 +1,601 @@
+/* Match - Estilo CineMatch Tinder do Stitch */
+.cinelog-match-page {
+  padding-top: 36px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Header */
+.match-hero-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 1px solid var(--surface-border);
+  padding-bottom: 24px;
+}
+
+.match-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 680px;
+}
+
+.match-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.session-tag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.match-main-heading {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.text-red {
+  color: var(--primary);
+}
+
+.text-green {
+  color: var(--rating-green);
+}
+
+.match-subtitle-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.match-stats-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.stats-pill-icon {
+  font-size: 1.5rem;
+}
+
+.stats-pill-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.pill-number {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.pill-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Grid Principal */
+.match-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 36px;
+  align-items: start;
+}
+
+/* Coluna de Cartas Tinder */
+.swipe-deck-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.tinder-deck-container {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Cartas de Fundo Empilhadas */
+.deck-stack-card {
+  position: absolute;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--surface-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  pointer-events: none;
+}
+
+.stack-depth-2 {
+  width: 86%;
+  height: 480px;
+  background-color: var(--surface-container-highest);
+  opacity: 0.35;
+  top: 0;
+  transform: translateY(16px) scale(0.92);
+}
+
+.stack-depth-1 {
+  width: 93%;
+  height: 500px;
+  background-color: var(--surface-container-high);
+  opacity: 0.7;
+  top: 0;
+  transform: translateY(8px) scale(0.96);
+}
+
+.stack-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px) brightness(0.6);
+}
+
+/* Carta Ativa */
+.tinder-active-card {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--surface-dim);
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  user-select: none;
+}
+
+.tinder-card-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-gradient-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 14, 17, 0.9) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.card-gradient-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 280px;
+  background: linear-gradient(
+    to top,
+    rgba(12, 14, 17, 0.98) 0%,
+    rgba(12, 14, 17, 0.7) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Carimbos Animados */
+.stamp-badge {
+  position: absolute;
+  top: 36px;
+  z-index: 50;
+  font-size: 1.4rem;
+  font-weight: 900;
+  padding: 6px 16px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: rgba(12, 14, 17, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-lg);
+  pointer-events: none;
+  animation: popIn 0.2s ease forwards;
+}
+
+.like-stamp {
+  right: 24px;
+  color: var(--rating-green);
+  border: 4px solid var(--rating-green);
+  transform: rotate(12deg);
+}
+
+.pass-stamp {
+  left: 24px;
+  color: var(--primary);
+  border: 4px solid var(--primary);
+  transform: rotate(-12deg);
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.stamp-like {
+  transform: translateX(40px) rotate(6deg);
+  opacity: 0.6;
+}
+
+.stamp-pass {
+  transform: translateX(-40px) rotate(-6deg);
+  opacity: 0.6;
+}
+
+/* Top Bar da Carta */
+.card-top-badges {
+  position: relative;
+  z-index: 10;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.green-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--rating-green);
+  border-radius: var(--radius-full);
+}
+
+/* Bottom Bar da Carta */
+.card-bottom-info {
+  position: relative;
+  z-index: 10;
+  padding: 20px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-genre-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mini-genre-pill {
+  background-color: rgba(40, 42, 45, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.card-movie-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.card-director-sub {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+}
+
+.card-streaming-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(22, 26, 32, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--surface-border);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+}
+
+.stream-brasil-label {
+  color: var(--text-muted);
+}
+
+.stream-brasil-providers {
+  color: var(--text-primary);
+}
+
+.card-synopsis-snippet {
+  font-size: 0.825rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Controles */
+.tinder-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 14px;
+}
+
+.control-btn {
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.control-btn:hover {
+  transform: scale(1.12);
+}
+
+.control-btn.btn-pass {
+  width: 58px;
+  height: 58px;
+  background-color: var(--surface-elevated);
+  border: 2px solid var(--surface-border);
+}
+
+.control-btn.btn-pass:hover {
+  background-color: rgba(229, 9, 20, 0.15);
+  border-color: var(--primary);
+}
+
+.control-btn.btn-info {
+  width: 46px;
+  height: 46px;
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+}
+
+.control-btn.btn-info:hover {
+  background-color: var(--surface-container);
+}
+
+.control-btn.btn-like {
+  width: 66px;
+  height: 66px;
+  background-color: var(--rating-green);
+  border: 2px solid var(--rating-green);
+  box-shadow: 0 6px 20px rgba(0, 224, 84, 0.4);
+}
+
+.control-btn.btn-like:hover {
+  opacity: 0.92;
+}
+
+.keyboard-hints-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.keyboard-hints-row kbd {
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.match-finished-box {
+  padding: 48px 24px;
+  max-width: 480px;
+}
+
+.finished-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Coluna Direita (Fila CineMatch) */
+.match-queue-column {
+  width: 100%;
+  position: sticky;
+  top: 92px;
+}
+
+.queue-card-panel {
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.queue-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.queue-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.queue-icon {
+  color: var(--rating-green);
+  font-size: 1rem;
+}
+
+.queue-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.queue-count-pill {
+  background-color: var(--surface-container);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.queue-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.queue-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.queue-item-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--surface-container);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease;
+  text-decoration: none;
+}
+
+.queue-item-row:hover {
+  background-color: var(--surface-container-high);
+  transform: translateX(2px);
+}
+
+.queue-item-thumb {
+  position: relative;
+  width: 52px;
+  height: 76px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--surface-dim);
+  flex-shrink: 0;
+}
+
+.queue-item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.queue-thumb-score {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background-color: var(--imdb-yellow);
+  color: #0c0e11;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.queue-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.queue-item-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.queue-item-meta {
+  font-size: 0.725rem;
+  color: var(--text-muted);
+}
+
+.queue-provider-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  background-color: var(--surface-elevated);
+  color: var(--secondary-warm);
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.queue-item-arrow {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  padding-right: 4px;
+}
+
+.queue-empty-note {
+  padding: 20px 10px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 992px) {
+  .match-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .match-queue-column {
+    position: static;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+}

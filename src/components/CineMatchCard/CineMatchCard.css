@@ -1,0 +1,142 @@
+.cinematch-card-wrapper {
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.cinematch-card-wrapper.anim-like {
+  transform: translateX(120px) rotate(10deg);
+  opacity: 0;
+}
+
+.cinematch-card-wrapper.anim-dislike {
+  transform: translateX(-120px) rotate(-10deg);
+  opacity: 0;
+}
+
+.cinematch-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.cinematch-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1a1a1e;
+}
+
+.cinematch-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.cinematch-rating {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(18, 18, 20, 0.85);
+  border: 1px solid var(--border-color);
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.cinematch-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cinematch-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cinematch-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.cinematch-year {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.cinematch-overview {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cinematch-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.match-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition:
+    transform 0.15s ease,
+    filter 0.2s ease;
+}
+
+.match-btn:active {
+  transform: scale(0.96);
+}
+
+.btn-dislike {
+  background-color: #27272a;
+  border: 1px solid #3f3f46;
+  color: #ef4444;
+}
+
+.btn-dislike:hover {
+  background-color: #3f3f46;
+}
+
+.btn-like {
+  background-color: var(--accent-red);
+  color: #ffffff;
+}
+
+.btn-like:hover {
+  filter: brightness(1.1);
+}
