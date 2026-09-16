@@ -1,0 +1,263 @@
+/* Navbar - Estilo Cinematografico Stitch */
+.cinelog-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background-color: rgba(17, 19, 23, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--surface-border);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
+}
+
+.cinelog-header-inner {
+  max-width: 1400px;
+  height: 72px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.cinelog-brand {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.15s ease;
+}
+
+.cinelog-brand:hover {
+  opacity: 0.9;
+}
+
+.cinelog-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cinelog-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.cinelog-nav-link:hover {
+  color: var(--text-primary);
+  background-color: var(--surface-container);
+}
+
+.cinelog-nav-link.active {
+  color: var(--text-primary);
+  background-color: var(--surface-elevated);
+  font-weight: 700;
+}
+
+.badge-new-pill {
+  background-color: var(--primary);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-404-pill {
+  background-color: rgba(229, 9, 20, 0.16);
+  color: #ff8585;
+  border: 1px solid rgba(229, 9, 20, 0.4);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+}
+
+.cinelog-nav-404:hover .badge-404-pill {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* Barra de Busca */
+.cinelog-search-box {
+  flex: 1;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.cinelog-search-box:focus-within {
+  border-color: var(--primary);
+  background-color: var(--surface-container);
+}
+
+.cinelog-search-box input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+.cinelog-search-box input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-kbd-hint {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background-color: var(--surface-container);
+  border: 1px solid var(--surface-border);
+  padding: 2px 6px;
+  border-radius: 4px;
+  user-select: none;
+}
+
+/* Grupo de Acoes da Direita */
+.header-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.quick-life-widget {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 6px 14px;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.quick-life-widget:hover {
+  background-color: var(--surface-container);
+  border-color: var(--surface-container-high);
+}
+
+.life-widget-metric {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.metric-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.metric-gold {
+  color: var(--secondary-warm);
+}
+
+.metric-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: lowercase;
+}
+
+.life-widget-divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--surface-border);
+}
+
+.user-avatar-button {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--surface-border);
+}
+
+.online-indicator-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--rating-green);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--surface);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .search-kbd-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .quick-life-widget {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cinelog-header-inner {
+    height: auto;
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+  .header-brand-group {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .cinelog-nav {
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .cinelog-search-box {
+    width: 100%;
+    max-width: 100%;
+    order: 3;
+    margin-top: 8px;
+  }
+}
