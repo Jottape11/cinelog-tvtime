@@ -1,0 +1,184 @@
+/* WatchProviders - Estilo Bento Grid do Stitch */
+.providers-card-wrapper {
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.providers-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.providers-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.providers-play-icon {
+  color: var(--rating-green);
+  font-size: 1rem;
+}
+
+.providers-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.providers-source-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.providers-source-tag strong {
+  color: var(--text-primary);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--rating-green);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 6px rgba(0, 224, 84, 0.7);
+}
+
+.providers-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.provider-category-box {
+  background-color: var(--surface-dim);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4px;
+}
+
+.category-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tag-green {
+  color: var(--rating-green);
+}
+
+.tag-amber {
+  color: var(--secondary-warm);
+}
+
+.category-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.providers-rows-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.provider-service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: var(--surface-container);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.provider-service-row:hover {
+  background-color: var(--surface-container-high);
+  border-color: var(--surface-container-highest);
+  transform: translateX(2px);
+}
+
+.service-info-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.service-text-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.service-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.service-plan {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.service-action-hint {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  opacity: 0.8;
+  transition:
+    opacity 0.15s ease,
+    color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.provider-service-row:hover .service-action-hint {
+  opacity: 1;
+  color: var(--text-primary);
+}
+
+.providers-empty-state,
+.service-empty-note {
+  padding: 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .providers-bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
