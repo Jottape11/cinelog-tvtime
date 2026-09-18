@@ -3,11 +3,11 @@
 Aplicação web cinematográfica desenvolvida para o **Checkpoint 1 de Web Development (2º Trimestre / 2026)** da FIAP.
 
 - **Instituição:** FIAP — Faculdade de Informática e Administração Paulista
-- **Curso:** Engenharia de Software / Análise e Desenvolvimento de Sistemas (Turma 1ESPW)
+- **Curso:** Engenharia de Software (Turma 1ESPW)
 - **Professor:** Caio Oliveira
 - **Integrantes do Grupo:**
-  - João Pedro Sá
-  - Gustavo Rezende Louro
+  - João Pedro Sá RM570509
+  - Gustavo Rezende Louro RM570708
 
 ---
 
